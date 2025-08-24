@@ -100,4 +100,23 @@ body {
     font-size: 14px;
     z-index: 100;
     transition: opacity 0.3s ease;
+
+}
+.track {
+    height: 12vh;
+    width: 800vw;
+    background-image: url(https://tse2.mm.bing.net/th/id/OIP.7z7RQanV08Gte8aHMkFJkQAAAA?rs=1&pid=ImgDetMain&o=7&rm=00);
+    position: absolute;
+    bottom: 0vh;
+    background-size: contain;
+    background-repeat: repeat-x;
+    animation: roadMove 1s linear infinite;
+}
+
+@keyframes roadMove {
+    0%   { transform: translateX(0) translateY(0); }
+    25%  { transform: translateX(-125vw) translateY(-0.5px); }
+    50%  { transform: translateX(-250vw) translateY(-1px); }
+    75%  { transform: translateX(-375vw) translateY(-0.5px); }
+    100% { transform: translateX(-500vw) translateY(0); }
 }
