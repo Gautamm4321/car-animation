@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow: hidden;
+}
+
+.sky {
+    height: 100vh;
+    width: 100%;
+    background-image: url(https://cdn.wallpapersafari.com/68/96/59HNxC.jpg);
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+}
+
+.track {
+    height: 12vh;
+    width: 800vw;
+    background-image: url(https://tse2.mm.bing.net/th/id/OIP.7z7RQanV08Gte8aHMkFJkQAAAA?rs=1&pid=ImgDetMain&o=7&rm=00);
+    position: absolute;
+    bottom: 0vh;
+    background-size: contain;
+    background-repeat: repeat-x;
+    /* Fixed: Reduced shaking - made it much smoother */
+    animation: carMove 3s linear infinite, shakebody 2s ease-in-out infinite;
+}
+
+.car {
+    height: 65px;
+    width: 230px;
+    background-image: url(https://www.nicepng.com/png/full/254-2547288_lamborghini-car-png.png);
+    background-size: cover;
+    position: absolute;
+    bottom: 11vh;
+    left: 620px;
+}
+
+.wheel1, .wheel2 {
+    height: 34px;
+    width: 34px;
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/17a5d384722845.5d67be0b5ce27.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: 15px;
+    border-radius: 100%;
+    animation: spin 1s linear infinite;
+}
+
+.wheel1 {
+    left: 158px;
+    bottom: 0vh;
+}
+
+.wheel2 {
+    right: 175px;
+    bottom: 0vh;
+}
+
+/* Animations */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes carMove {
+    100% {
+        transform: translate(-500vw);
+    }
+}
+
+/* Fixed: Much smoother road shaking */
+@keyframes shakebody {
+    0% { transform: translateY(0px); }
+    25% { transform: translateY(-0.5px); }
+    50% { transform: translateY(-1px); }
+    75% { transform: translateY(-0.5px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Music info styling */
+.music-info {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    z-index: 100;
+    transition: opacity 0.3s ease;
+}
